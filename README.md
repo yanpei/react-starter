@@ -1,8 +1,8 @@
 yarn add --dev webpack webpack-dev-server path
 
-yarn add babel-loader babel-core babel-preset-es2015 babel-preset-react --dev
+4 yarn add babel-loader babel-core babel-preset-es2015 babel-preset-react --dev
 
-touch .babelrc
+5 touch .babelrc
 
 {
     "presets":[
@@ -10,10 +10,11 @@ touch .babelrc
     ]
 }
 
-touch index.js index.html file
+6 touch index.js index.html file
 
-yarn add html-webpack-plugin
+7 yarn add html-webpack-plugin
 
+8 webpack.config.js
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './client/index.html',
@@ -21,3 +22,20 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body'
 })
 plugins: [HtmlWebpackPluginConfig]
+
+9 package.json
+"scripts": {
+    "start": "webpack-dev-server"
+  },
+  
+  10App.jsx
+  import React from 'react';
+
+export default class App extends React.Component {
+  render() {
+    return (
+     <div style={{textAlign: 'center'}}>
+        <h1>Hello World</h1>
+      </div>);
+  }
+}
